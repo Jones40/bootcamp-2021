@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Updated way</h1>
+    <p>Hey</p>
+    <p>Hey</p>
+    <p>Hey</p>
+
+    <script>
+        //Anonymous function    
+        document
+            .querySelector('h1')
+            // function is a "callBack"
+            .addEventListener('click', function (event) {
+                console.log(event)
+            });
+        document
+            .querySelector('h1')
+            .addEventListener('click', (event) => {
+                console.log(event)
+            });
+        //definition of the function  
+        const myHeading = document.querySelector('h1');
+        function shoot(event) {
+            console.log(event);
+            alert('bang!')
+        }
+        myHeading.addEventListener('click', shoot);
+        // remove work only with named function
+        myHeading.removeEventListener('click', shoot);
+
+
+        // EVENT with multiple elements
+        // targets
+        const allP = document.querySelectorAll('p'); // -> Array [] -> forOF
+        // definition of the function
+        function hiphop() {
+            // "this" refere to the "target" that launch/trigger the event
+            this.innerText = 'Ho';
+        }
+        // I will attach to function to EACH of the <p>
+        for (const oneP of allP) {
+            oneP.addEventListener('click', hiphop);
+        }
+
+    </script>
+</body>
+
+</html>

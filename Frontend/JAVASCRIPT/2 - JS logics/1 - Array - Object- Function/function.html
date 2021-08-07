@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        // EVERY Function NEEDS TWO PARTS
+        // 1- Definition
+        function sendEmail(email) {
+            const subject = "Welcome to the School";
+            const content = "You've be the choosen one.";
+            //return gmail.send(email, [subject, content])
+        }
+        // 2- Call/Use
+        sendEmail('alex@an.dru')
+        sendEmail('El@s.a')
+        sendEmail('Diogo@Jo.sé')
+
+        // 3 different Writtings 
+        function oracle1() {
+            return 'Maybe';
+        }
+        const oracle2 = function () {
+            return 'Maybe'
+        }
+        const oracle3 = () => {
+            return "Maybe";
+        }
+        const oracle = () => "Maybe";
+
+        function bestJB() {
+            return "ME";
+        }
+
+        function name(username) {
+            // sanitize
+            return "Hi " + username;
+        }
+
+        // age calulator
+        function ageCalculator(yob) {
+            const age = 2021 - yob;
+            return "You are : " + age;
+        }
+        ageCalculator(3000); //-> 21
+
+        // output multiple values
+        function ageConverter(yob) {
+            const age = 2021 - yob;
+            return {
+                human: age,
+                dog: age * 7,
+                cat: age * 10
+            }
+            return [age, age * 7, age * 10];
+        }
+
+    </script>
+</body>
+
+</html>

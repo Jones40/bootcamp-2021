@@ -1,0 +1,9 @@
+<h2>Rooms</h2>
+<ul>
+    <li *ngFor="let roomData of roomsArray">
+        {{roomData.id}}
+        <!-- TODO: Link to the chat page -->
+        {{roomData.roomName}}
+    </li>
+</ul>
+<a [routerLink]="['/createRoom']">New Room</a>

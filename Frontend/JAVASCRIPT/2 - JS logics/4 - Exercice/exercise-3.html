@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3</title>
+</head>
+
+<body>
+    <script>
+        /*
+        # You shall not Pass
+    
+        1 - ask for a number of students
+        2 - for each student you ask for the name and the mark
+        3 - if the mark if below 10, the tell "You shall not Pass" + username
+        4 - ask him for pratice theory to do the avergage
+        */
+        const nbStudents = prompt('nb students?');
+        for (let s = 0; s < nbStudents; s++) {
+            const name = prompt('name');
+            const Tmark = Number(prompt('Tmark'));
+            const Pmark = +prompt('Pmark');
+            const mean = (Tmark + Pmark) / 2;
+            if (mean < 10) {
+                alert('You shall not Pass ' + name);
+            }
+        }
+
+        // const mark = prompt('Tmark, Pmark');
+        // const markArray = mark.split(',');
+        // const mean = (Number(markArray[0]) + Number(markArray[1])) / 2;
+    </script>
+</body>
+
+
+</html>

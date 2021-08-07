@@ -1,0 +1,5 @@
+<h1>Create a new Room : {{roomValue}}</h1>
+<form (ngSubmit)="handleSubmit()">
+    <input [(ngModel)]="roomValue" name="room">
+    <input type="submit" value="Create Room">
+</form>

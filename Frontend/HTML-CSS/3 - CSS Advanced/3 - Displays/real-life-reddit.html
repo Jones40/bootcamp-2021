@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN Forfont awesome : https://cdnjs.com/libraries/font-awesome -->
+    <!-- link to Font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        /*trending*/
+        #trending article {
+            background-image: url(https://picsum.photos/200/300);
+            width: 25%;
+            padding-top: 100px;
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        #trending {
+            display: flex;
+            gap: 10px;
+        }
+
+        main {
+            width: 1000px;
+            margin: auto;
+        }
+
+        h3 {
+            margin: 20px 0;
+        }
+
+        /*content section*/
+        div#content {
+            display: flex;
+            gap: 10px;
+        }
+
+        #content #everything {
+            background-color: lightpink;
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        #content aside {
+            width: 25%;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+
+        #content article {
+            height: 300px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/fr/5/58/Reddit_logo_new.svg" alt="logo">
+        <input placeholder="Search..." type="search">
+        <nav>
+            <!-- I change page
+                <a href=""></a>
+            -->
+            <!--
+                I launch an ACTION
+             -->
+            <button>Login </button>
+            <button>Signup </button>
+            <button>
+                <i class="fas fa-user"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="centered area">
+        <h3>Trendings</h3>
+        <section id="trending">
+            <article>
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </article>
+            <article>
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </article>
+            <article>
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </article>
+            <article>
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </article>
+        </section>
+
+        <div id="content" class="second main...">
+            <section id="everything" class="left part">
+                <article class="top menu of second main.. left part">
+                    <nav>
+                        <button>action1</button>
+                        <button>action2</button>
+                        <button>action3</button>
+                        <button>action4</button>
+                        <button>action5</button>
+                    </nav>
+                    <button>More</button>
+                </article>
+                <article>
+                    article,
+                    please upvote
+                </article>
+                <article>
+                    article,
+                    please upvote
+                </article>
+                <article>
+                    article,
+                    please upvote
+                </article>
+                <article>
+                    article,
+                    please upvote
+                </article>
+            </section>
+            <aside class="right part">
+                <p>Buy this product to have a bigger... brain</p>
+            </aside>
+        </div>
+    </main>
+</body>
+
+</html>

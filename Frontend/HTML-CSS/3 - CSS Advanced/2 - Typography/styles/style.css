@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "harry";
+    src: url(../fonts/HARRYP__.TTF);
+}
+
+h1{
+    /* Text related properies inherites to childrens */
+    color: brown;
+    /* (tac) - left, right, justify to the parent usually*/
+    text-align: center;
+    /*(tdu/tdn) - usually to remove underlingment of <a>*/
+    text-decoration: underline;
+    text-decoration: none;
+    /*ttu - uppercase*/
+    text-transform: uppercase;
+    
+    /* font */
+    /*fz : 1rem => 10px, %*/ 
+    font-size: 50px;
+    /*boldness*/
+    /*fw*/
+    font-weight: 100; 
+    /*fsi*/
+    font-style: italic;
+    /*ff*/
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Reggae One', cursive;
+    font-family: "harry", 'Reggae One', cursive;
+    
+    /*funny*/
+    line-height: 100px;
+    letter-spacing: 50px;
+    /*text hsadown : horizontal, vertical, blurryness, color*/
+    text-shadow: 10px 5px 10px rgba(0,0,0,0.5);
+}
+
+section{
+    font-family: 'Sacramento', cursive;
+    font-size: 2em;
+}

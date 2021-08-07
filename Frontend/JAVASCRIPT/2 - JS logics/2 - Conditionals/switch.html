@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const animal = "dog";
+
+        if (animal == 'dog') {
+            alert('bark, bark, bark');
+        } else if (animal == 'cat') {
+            alert('miaw miaw miaw')
+        } else if (animal == 'duck') {
+            alert('cwak cwak cwak');
+        } else if (animal == 'wildson') {
+            alert('aie aie aie');
+        } else {
+            alert('unknow animal')
+        }
+
+        switch (animal) {
+            case 'dog':
+            case 'Dog':
+            case 'DOG':
+                alert('bark')
+                break;
+            case 'cat':
+                alert('miaw');
+                break;
+
+            default:
+                alert('unknown animal')
+                break;
+        }
+    </script>
+</body>
+
+</html>

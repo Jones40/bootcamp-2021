@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fruits = ['apple', 'banana', 'cake'];
+        // You [need] the [index] and Value
+        debugger;
+        for (let i = 0; i < fruits.length; i++) {
+            const fruit = fruits[i];
+            console.log(i, fruit);
+        }
+
+        // I don't care about the index
+        for (const fruit of fruits) {
+            console.log(fruit);
+        }
+
+        // Bonus
+        // fruits.forEach(fruit => sendEmail(fruit));
+
+        // For property in an object (not that much used)
+        /*
+        for (const key in object) {
+            if (Object.hasOwnProperty.call(object, key)) {
+                const element = object[key];
+
+            }
+        }
+        */
+
+        // Real life example
+        const usersArray = [
+            { username: 'Igor', password: '123' },
+            { username: 'SpongeBob', password: 'Patrick1!' },
+            { username: 'Morty', password: 'Rick' },
+            { username: 'mobyDick', password: 'itsanovel' },
+        ]
+        // algorythm -> alert users about weakness of password
+        for (const user of usersArray) {
+            const weakPass = user.password.length < 4;
+            if (weakPass) {
+                alert('Change you password: ' + user.username)
+            }
+        }
+
+        for (const dude of usersArray) {
+            const lowerName = dude.username.toLowerCase();
+            const bad = lowerName.includes('dick');
+            if (bad) {
+                alert('BAN ' + acccount.username)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

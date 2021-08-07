@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .cuby {
+            height: 80px;
+            width: 80px;
+            background-color: lightblue;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 2rem;
+            user-select: none;
+            /* Standard */
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cuby">o_o</div>
+    <script>
+        const cuby = document.querySelector('.cuby');
+        function kill() {
+            cuby.style.backgroundColor = "red";
+            cuby.innerText = "X_X";
+        }
+        cuby.addEventListener('click', kill);
+
+        function fear() {
+            cuby.style.backgroundColor = "orange";
+            cuby.innerText = 'O_O"';
+        }
+        cuby.addEventListener('mousemove', fear);
+
+        function relax() {
+            cuby.style.backgroundColor = "lightblue";
+            cuby.innerText = 'o_o';
+        }
+        cuby.addEventListener('mouseleave', relax);
+
+        document.addEventListener('mousemove', function (event) {
+            cuby.style.top = event.clientY + 'px';
+            cuby.style.left = event.clientX + 'px';
+        })
+    </script>
+</body>
+
+</html>

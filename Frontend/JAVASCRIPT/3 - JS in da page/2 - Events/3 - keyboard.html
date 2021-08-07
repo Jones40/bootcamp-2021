@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="request.php">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+        <button type="submit" disabled>Send</button>
+    </form>
+    <script>
+        const usernameInput = document.querySelector('#username');
+        const formElement = document.querySelector('form');
+        const buttonElement = document.querySelector('button');
+        function checkUsername(event) {
+            //console.log(event);
+            const userValue = usernameInput.value;
+            console.log(userValue);
+            if (userValue.length > 6) {
+                buttonElement.disabled = false;
+            } else {
+                buttonElement.disabled = true;
+            }
+        }
+        usernameInput.addEventListener('keyup', checkUsername)
+
+    </script>
+</body>
+
+</html>

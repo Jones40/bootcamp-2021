@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        const fridge = {
+            color: 'red',
+            temperature: 4,
+            beverages: ['water', 'beers'],
+            owner: {
+                name: 'Igor MARTY',
+                location: 'Not you business'
+            }
+        }
+        console.log(fridge.color);
+        console.log(fridge.owner.name);
+        console.log(fridge.beverages[1]);
+
+        const kitchen = ['Table', 'chair', fridge];
+        kitchen[2].temperature;
+
+        // disable modification of an object
+        Object.freeze(fridge);
+        fridge.color = 'blue';
+
+        // In real life
+        document.write('Hello');
+        [123, 34].length;
+        Math.random();
+        // You will use JSON => JavaScript Object Notation
+    </script>
+</body>
+
+</html>

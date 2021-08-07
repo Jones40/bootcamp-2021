@@ -1,0 +1,10 @@
+<ul>
+    <!-- clone -->
+    <li *ngFor="let category of categoriesArray">
+        <button (click)="handleClick(category)">
+            {{category}}
+        </button>
+    </li>
+</ul>
+<!-- Joke -->
+<p>{{daJoke}} <button (click)="like(daJoke)">Like</button> </p>

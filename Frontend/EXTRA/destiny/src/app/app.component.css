@@ -1,0 +1,11 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 1000px;
+  margin: auto;
+}
+section article {
+  width: 20%;
+  border: 1px solid black;
+}

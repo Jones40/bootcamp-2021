@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Inline : concidered text-like
+      Does not understand : heigh, width, margin-top/bottom*/
+        /*Block: using the full "line/space/width" available*/
+
+        div,
+        span {
+            border: 1px solid blue;
+        }
+
+        span {
+            display: inline-block;
+            border-color: green;
+            width: 100px;
+            height: 100px;
+        }
+
+        section {
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            /*horizontal*/
+            justify-content: space-between;
+            /*vertical*/
+            align-items: center;
+            gap: 10px;
+
+            /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+            flex-direction: column;
+            /* Game to practice https://flexboxfroggy.com */
+        }
+
+        h2 {
+            margin: 0;
+            height: 80px;
+            width: 80px;
+            background-color: lightcoral;
+        }
+
+        /*Bonus : learn a bit of display grid */
+        /*or use generators : https://cssgrid-generator.netlify.app*/
+    </style>
+</head>
+
+<body>
+    <div>Div</div>
+    <div>Div</div>
+    <div>Div</div>
+    <span>Span</span>
+    <span>Span</span>
+    <span>Span</span>
+
+    <section>
+        <h2>Hello</h2>
+        <h2>My dear</h2>
+        <h2>Igor</h2>
+    </section>
+</body>
+
+</html>

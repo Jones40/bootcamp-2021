@@ -1,0 +1,7 @@
+{
+  "name": "fart-norris",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

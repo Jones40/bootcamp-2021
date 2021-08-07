@@ -1,0 +1,14 @@
+<h1>Chat</h1>
+<ul>
+    <li *ngFor="let msgData of messagesArray">
+        <img [src]="getUsersDetails(msgData.userId).image">
+        {{getUsersDetails(msgData.userId).username}}
+        ->
+        {{msgData.message}}
+    </li>
+</ul>
+
+<form (ngSubmit)="handleSubmit()">
+    <input [(ngModel)]="userMsg" name="userMsg">
+    <button type="submit">Send</button>
+</form>

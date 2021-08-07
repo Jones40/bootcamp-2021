@@ -1,0 +1,5 @@
+1. Selectors exerices
+2. Game Selectors
+https://flukeout.github.io
+3. Game emmet
+https://ahndohun.github.io/emmet-game/

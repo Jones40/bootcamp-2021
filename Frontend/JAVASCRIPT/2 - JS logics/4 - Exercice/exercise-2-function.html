@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursivity</title>
+</head>
+
+<body>
+    <script>
+        const secret = 7;
+        const lifes = 5;
+        // definition
+        function play() {
+            const guess = prompt('Guess my number ?');
+            if (guess == secret) {
+                alert('SUCCESS');
+            } else {
+                alert('LOSE');
+                lifes--;
+                if (lifes > 0) {
+                    play(); // recursivity - a function that call itself
+                } else {
+                    alert('Game over');
+                }
+            }
+        }
+        // call/use
+        play();
+    </script>
+</body>
+
+</html>

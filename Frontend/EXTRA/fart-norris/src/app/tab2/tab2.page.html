@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Jokes by Categories
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Jokes by Categories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-img src="/assets/chucks/chuck-warn.gif"></ion-img>
+
+  <section>
+    <!-- FOR LOOP CLONING ON categoriesArray -->
+    <ion-chip outline color="danger" *ngFor="let categoryLoop of categoriesArray"
+      (click)="selectCategory(categoryLoop)">
+      <ion-label>{{categoryLoop}}</ion-label>
+    </ion-chip>
+  </section>
+
+  <app-joke-card [jokeObject]="daJoke"></app-joke-card>
+
+</ion-content>

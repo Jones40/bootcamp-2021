@@ -1,0 +1,9 @@
+<ion-card *ngIf="jokeObject">
+  <ion-card-content>
+    {{jokeObject.value}}
+  </ion-card-content>
+  <!-- fab placed to the bottom end -->
+  <ion-fab-button size="small" color="danger" (click)="handleClick()">
+    <ion-icon name="heart-outline"></ion-icon>
+  </ion-fab-button>
+</ion-card>

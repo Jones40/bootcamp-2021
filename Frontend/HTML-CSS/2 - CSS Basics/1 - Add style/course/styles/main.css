@@ -1,0 +1,13 @@
+/* Fourth Method (don't use it) */
+@import url(other.css);
+
+h3{
+    color: blue;
+}
+
+h5{
+    color: blue;
+    font-family: serif;
+    text-align: right;
+    text-decoration: underline;
+}

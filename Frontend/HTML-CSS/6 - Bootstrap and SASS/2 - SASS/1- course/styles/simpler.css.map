@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,GAAG,CAAC;EACF,UAAU,EAAE,cAAc;CAU3B;;AAXD,AAEE,GAFC,CAED,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;CAOjB;;AAVH,AAII,GAJD,CAED,EAAE,CAEA,CAAC,CAAC;EACA,eAAe,EAAE,IAAI;CAItB;;AATL,AAMM,GANH,CAED,EAAE,CAEA,CAAC,AAEE,MAAM,CAAC;EACN,eAAe,EAAE,SAAS;CAC3B",
+    "sources": [
+        "simpler.scss"
+    ],
+    "names": [],
+    "file": "simpler.css"
+}

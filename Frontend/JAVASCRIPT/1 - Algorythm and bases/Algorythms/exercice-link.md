@@ -1,0 +1,1 @@
+https://www.notion.so/Exerices-Algorythme-1f115da147594b908ac13dd3e7508068

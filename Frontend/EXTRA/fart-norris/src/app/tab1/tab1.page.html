@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Random Joke
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Random Joke</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-img src="/assets/chucks/chuck-nope.gif"></ion-img>
+  <ion-button (click)="generateAJoke()" class="ion-margin">Give me a sneeze</ion-button>
+  <!-- Our custom component -->
+  <app-joke-card [jokeObject]="daJoke"></app-joke-card>
+</ion-content>

@@ -1,0 +1,7 @@
+<h1>Register</h1>
+<form (ngSubmit)="handleSubmit()">
+    <input [(ngModel)]="usernameValue" name="username">
+    <input [(ngModel)]="passwordValue" name="password" type="password">
+    <input [(ngModel)]="imageValue" name="image" type="url">
+    <input type="submit" value="Register">
+</form>

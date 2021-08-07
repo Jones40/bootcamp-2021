@@ -1,0 +1,12 @@
+<h1>Home</h1>
+<nav>
+    <a [routerLink]="['/register']">Register</a>
+    <a [routerLink]="['/login']">Login</a>
+</nav>
+<h3>Users</h3>
+<ul>
+    <li *ngFor="let user of usersArray">
+        <img [src]="user.image">
+        {{user.username}}
+    </li>
+</ul>

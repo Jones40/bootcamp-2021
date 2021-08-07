@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <style>
+        #action {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 1;
+            background-color: white;
+        }
+
+        #menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            padding: 2rem;
+            margin: 0;
+            transform: translateX(-105%);
+            transition-duration: 0.4s;
+            transition-timing-function: cubic-bezier(0.4, -0.04, 0.27, 1.4);
+            border-radius: 0 0 0 0;
+            height: 100vh;
+        }
+
+        #menu.opened {
+            transform: translateX(-10%);
+            border-radius: 0 50% 50% 0;
+        }
+
+        a {
+            display: block;
+            color: lightgrey;
+            text-decoration: none;
+            transition-duration: 0.2s;
+            transform: scale(1);
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button id="action"><i class="fas fa-bars"></i></button>
+        <ul id="menu" class="">
+            <li>
+                <a href="#"> Home </a>
+            </li>
+            <li>
+                <a href="#"> About </a>
+            </li>
+            <li>
+                <a href="#"> Contact </a>
+            </li>
+            <li>
+                <a href="#"> Info </a>
+            </li>
+        </ul>
+    </header>
+    <script>
+        /* 
+        Faire en sorte que le menu apparaisse et disparaisse 
+        quand on click sur le bouton en utilisant la class CSS "opened" sur le #menu
+        */
+        const actionButton = document.querySelector('#action');
+
+        actionButton.addEventListener('click', function () {
+            document.querySelector('#menu').classList.toggle('opened');
+        })
+        /*
+            const actionButton              Je créer une variable appelée "actionButton" 
+            =                               qui contient
+            document.querySelector          checher dans ma page web, un element qui s'appelle
+            ('#action');                    avec id="action"
+            
+            .addEventListener(              Quand
+            actionButton                    Le button id="action"
+            'click',                        est clické
+            function () {                   Je lance cette function
+
+
+            document.querySelector('#menu') Dans la page web cherche un element avec id="menu"
+            .classList                      Change la class CSS class=""
+            .toggle('opened');              Pour que, 
+                                                si ca contient pas la CSS class="opened", 
+                                                    Ca l'ajoute.
+                                                et si ca contient déjà la CSS class="opened"    
+                                                    Ca la retire.
+
+                */
+
+    </script>
+</body>
+
+</html>

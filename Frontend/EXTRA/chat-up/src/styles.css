@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+/* https://coolors.co/931621-28464b-326771-2c8c99-42d9c8 */
+:root {
+  --main-color: #a2708a;
+  --dark-main: #824670;
+  --dark-second: #c3d2d5;
+  --accent-color: #c1f7dc;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: var(--accent-color);
+  color: var(--dark-main);
+  text-align: center;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: var(--dark-main);
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid var(--dark-main);
+  text-decoration: none;
+  transition-duration: 0.3s;
+  border-radius: 5px;
+  margin: 10px;
+}
+a:hover {
+  color: var(--accent-color);
+  background-color: var(--dark-main);
+  transform: scale(1.2);
+  text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+<!-- {{data binding}} TS -> HTML -->
+<h1>Welcome to : {{title}}</h1>
+<section>
+    <!-- Clone -->
+    <article *ngFor="let weapon of weaponsArray">
+        <!-- Change attribut -->
+        <img [src]="weapon.imageUrl">
+        <h3>{{weapon.name}}</h3>
+        <p>{{weapon.description}}</p>
+        <!-- Loop on the stats ? -->
+        <ul>
+            <li *ngFor="let stat of weapon.stats">
+                {{stat.name}}
+            </li>
+        </ul>
+    </article>
+
+</section>
+<router-outlet></router-outlet>

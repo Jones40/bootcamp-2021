@@ -1,0 +1,35 @@
+// variables
+$main_color: green;
+$default_spacing : 20px
+// use of a variable
+body
+    background-color: $main_color
+// use of defined functions
+//  calculations  
+h1
+    color: lighten($main_color,10)
+    border: 3px+$default_spacing solid darken($main_color, 10 )
+// Nesting    
+nav
+    margin-top: 10px
+    border-top: 1px solid #000
+    ul
+        list-style: none
+        padding-left: 0
+        a
+            text-decoration: none
+            color: darken($main_color, 100 )
+            &:hover
+                text-decoration: underline
+    p
+        color: blue
+// indentation is important, very important,  like life killing important
+@media screen and (min-width: 600px)
+    body
+        background-color: purple  
+    #contact
+        p
+            color: brown
+    #home
+        p
+            color: pink              

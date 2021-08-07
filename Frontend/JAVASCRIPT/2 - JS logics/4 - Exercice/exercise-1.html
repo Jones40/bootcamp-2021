@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+</head>
+
+<body>
+    <script>
+        /*
+        # Legal Age
+            1 - Ask the user his birth Year
+            2 - If the user has legal age (18) then he can stay
+            Else Show a message to make him leave
+
+            Bonus 1 : Use Windows Location (Google) to redirect the user (Sport Bet website.. or You..Tube)
+            Bonus 2 : Check for months and Days...
+        */
+        const yob = prompt('Give me your year of birth');
+        const age = 2021 - yob;
+        const legal = age >= 18;
+        if (legal) {
+            document.write('Welcome');
+            //alert('welcome');
+            //console.log('Its a man/woman here! I dont assume your gender.')
+        } else {
+            window.location = 'https://youtube.com';
+        }
+    </script>
+</body>
+
+</html>

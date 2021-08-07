@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .important {
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create</h1>
+    <section></section>
+    <script>
+        // CREATE ELEMENT 
+        // 3 steps process : create, append, customize
+        // 1 - Create element
+        const myHeading = document.createElement('h2');
+        // 2 - append element in the page
+        document.querySelector('section').append(myHeading);
+        // 3 - Customize
+        myHeading.innerText = "Some content";
+        myHeading.classList.add('important');
+        myHeading.id = "Semthing";
+        myHeading.style.backgroundColor = "red";
+        myHeading.addEventListener('click', function () {
+            this.classList.toggle('important');
+        });
+
+    </script>
+</body>
+
+</html>

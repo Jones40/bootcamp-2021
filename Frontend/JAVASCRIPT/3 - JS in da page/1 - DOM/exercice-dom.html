@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest'o'Ranch</title>
+    <style>
+        #message {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .close {
+            color: red
+        }
+
+        .open {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rest'o'Ranch</h1>
+    <p id="message">open/close</p>
+    <script>
+        const now = new Date();
+        let currentHour = now.getHours();
+        let currentMinutes = now.getMinutes();
+        // test/debug 
+        currentHour = 14;
+        currentMinutes = 00;
+        const messElement = document.querySelector('#message');
+        // FIRST - Restorant is open from 11h to 14h
+        const isLunch = 11 <= currentHour && currentHour < 14
+        // THEN - Open also from 19h to 23h
+        const isDinner = 19 <= currentHour && currentHour < 23;
+        const isOpen = isLunch || isDinner;
+        if (isOpen) {
+            messElement.innerText = "Open";
+            messElement.classList.add('open');
+        } else {
+            messElement.innerText = "Close";
+            messElement.classList.add('close');
+        }
+
+        // BONUS  :         
+        // HURRY - Message telling the user that the restaurant close in ... less that 30min
+        // above 13:30/22:30
+        const hurry = (currentHour == 13 || currentHour == 22) && currentMinutes >= 30;
+        if (hurry) {
+            //messElement.innerText = messElement.innerText + '. But will close in...';
+            messElement.innerText += '. But it will close in...';
+            const minutesLeft = 60 - currentMinutes;
+            messElement.innerText += minutesLeft + 'min';
+        }
+        // LATER - Message telling the user that the restaurant open in ... less that (30)min -> Close (10h59 - 18h30)
+        const later = (currentHour == 10 || currentHour == 18) && currentMinutes >= 30;
+        if (later) {
+            //messElement.innerText = messElement.innerText + '. But will close in...';
+            messElement.innerText += '. But it will open in...';
+            const minutesLeft = 60 - currentMinutes;
+            messElement.innerText += minutesLeft + 'min';
+        }
+
+    </script>
+</body>
+
+</html>

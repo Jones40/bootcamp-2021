@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IF</title>
+</head>
+
+<body>
+    <script>
+        /*
+        if(condition){
+
+        }else{
+
+        }
+        */
+        const drawingLevel = 100;
+        // I prefere to do my tests ABOVE the IF
+        const drawingSkill = drawingLevel > 50;
+        // If react on truthy/falsy values
+        // Falsy -> 0, false, NaN, undefined, null, ''
+        // Everything Else
+        if (drawingSkill) {
+            alert('Wow! Amazing!');
+        } else {
+            alert('Go buy some new hands')
+        }
+
+        let somebodyInElevator; // undefined -> falsy -> else
+        somebodyInElevator = ''; // falsy value
+        somebodyInElevator = ' '; // space is a value
+        if (somebodyInElevator) {
+            alert('Hello');
+        } else {
+            alert('who the fuck goes on 3rd floor ?');
+        }
+        friend = "Scrappy";
+        badWords = friend.indexOf('crap') > -1; //-> -1
+        badWords = 1 > -1; //-> true
+
+        friend = "Crabby";
+        badWords = friend.indexOf('crap') > -1; //-> -1
+        badWords = -1 > -1; //-> false
+
+        const badWordBool = friend.includes('crap');
+
+        // One '=' means ASSIGN
+        // TWO '==' MEANS TEST EQUALITY
+        // THREE '===' MEANS TEST STRICT EQUALITY
+        if (friend == "crabby") {
+            alert('I got em all');
+        } else {
+            alert('Gotta catch em!')
+        }
+
+        // large quality
+        let age = 18;
+        age < 18; // -> F
+        age > 18; // -> F
+        age == 18; // T
+        age >= 18; // T
+        age <= 18; // T
+        age => 18; // It's a TRAP ! It's a function!
+        age == '18'; // T
+        age != 28; // T
+
+
+        // Strict equality ===
+        age === 18; // T
+        age === '18'; // F
+        age !== '18'; // T 
+        age !== 18; // F
+
+        // ! NOT
+        drawingSkill;// T
+        !drawingSkill;// F
+        !!drawingSkill; //T
+
+        // && -> AND
+        const teacherHere = true;
+        const CO2Good = true;
+        if (teacherHere && CO2Good) {
+            alert('course starts');
+        } else {
+            alert('Have a nice holiday')
+        }
+
+        // || -> OR 
+        const alanHere = true
+        if (teacherHere || alanHere) {
+            alert('evaluation start')
+        } else {
+            alert('Go home')
+        }
+
+        // Bonus, please don't beat me.
+        let message;
+        if (age >= 18) {
+            message = "Welcome"
+        } else {
+            message = "Go away";
+        }
+        // ternary operator
+        message = (age > 18) ? "Welcome" : "Go away";
+    </script>
+</body>
+
+</html>

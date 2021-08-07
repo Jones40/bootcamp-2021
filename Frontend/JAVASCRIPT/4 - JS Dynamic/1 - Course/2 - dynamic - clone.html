@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+
+        article {
+            background-color: #fff;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .leaks {
+            border-left: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic</h1>
+    <section>
+        <article id="article-template">
+            <h2>Example</h2>
+            <p>Lorem, something</p>
+        </article>
+    </section>
+    <script>
+        const articlesArray = [
+            {
+                title: 'I love HTML',
+                content: 'HTML is a very nice programmation langage... ',
+                category: 'fake',
+            },
+            {
+                title: 'I love CSS',
+                content: 'CSS is a very nice programmation langage... ',
+                category: 'fake',
+            },
+            {
+                title: 'I love JS',
+                content:
+                    'HTML and CSS are NOT real programmation langage OMG FAKE NEWS! ',
+                category: 'leaks',
+            },
+        ];
+
+        // I want to dynamically add this content to my <section>
+        // TWO solutions to that
+        // FIRST: I CODE EVERYTHING BECAUSE I CAN
+
+        // SECOND: I'M LAZY and I know IT
+        // 1 - I need a model/template/mock/placehold
+        const articleFake = document.querySelector('#article-template');
+        // 2- duplicate/clone our model
+        for (const articleData of articlesArray) {
+            // 1- Clone element (true => children also)
+            const articleHTMLClone = articleFake.cloneNode(true);
+            // 2- append
+            document.querySelector('section').append(articleHTMLClone);
+            // 3 - Pimp my clone
+            articleHTMLClone.id = "";
+            articleHTMLClone.classList.add(articleData.category);
+            articleHTMLClone.querySelector('h2').innerText = articleData.title;
+            articleHTMLClone.querySelector('p').innerText = articleData.content;
+        }
+        // Kill the original (and its familly)
+        articleFake.remove();
+    </script>
+</body>
+
+</html>

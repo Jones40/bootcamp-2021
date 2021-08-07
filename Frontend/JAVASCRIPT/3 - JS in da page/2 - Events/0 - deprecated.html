@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Don't do that ever -->
+    <h1 onclick="alert('click')">Deprecated</h1>
+    <script>
+        document.querySelector('h1').onclick = function () {
+            alert('click')
+        }
+    </script>
+</body>
+
+</html>

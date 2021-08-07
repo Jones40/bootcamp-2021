@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: teal;
+  border-bottom: 2px solid teal;
+}
+header a {
+  padding: 10px 20px;
+  color: teal;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  margin-left: 10px;
+}
+header a:hover {
+  background-color: teal;
+  color: white;
+  text-decoration: underline;
+  border-radius: 10px;
+}
+main {
+  width: 80%;
+  margin: auto;
+}
+footer {
+  background-color: lightseagreen;
+  color: white;
+  text-align: right;
+  padding: 5px 20px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form" action="">
+        <label>Name</label><br />
+        <input id="name" type="text" />
+        <br />
+        <label>Email</label><br />
+        <input id="email" type="email" />
+        <br />
+        <label>Phone Number</label><br />
+        <input id="number" type="tel" />
+        <br />
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        /*
+        When the form is submitted
+          - GATHER :
+              get the #name input,
+              input value
+              and length of this input value
+         - LOGIC : check if the name length if above 4
+         - DISPLAY :
+                      put a green border if valid
+                      put a red border if wrong
+        */
+        const myForm = document.querySelector('#form');
+        const nameInput = document.querySelector('#name');
+        const phoneInput = document.querySelector('#number');
+        const mailInput = document.querySelector('#email');
+
+        function validate(event) {
+            checkName();
+            checkPhone();
+            checkEmail();
+        }
+        myForm.addEventListener('submit', validate);
+
+        /*
+          MEDIUM : check for the phone tel to have exactly than 9 characters
+        */
+
+        /*
+        ADVANCED : The email should contain a "@" AND a dot "."
+        HINT : use .indexOf('.') > -1 // includes('.')
+        */
+
+        /*
+            BONUS : Verify this "on the fly" using the input "keyup" event
+        */
+        nameInput.addEventListener('keyup', checkName)
+        function checkName() {
+            // Input - Gather - Retreive informations/ format
+            const nameValue = nameInput.value;
+            // Logic - length > 4
+            const nameValid = nameValue.length > 4;
+            console.log(nameValue, nameValid);
+            // Output/Feedback
+            if (nameValid) {
+                nameInput.style.borderColor = "green";
+            } else {
+                nameInput.style.borderColor = "red";
+            }
+            // Ternary operator =(condition)?valueTrue:valueFalse;
+            // nameInput.style.borderColor = (nameValue.length > 4) ? 'green' : 'red';
+        }
+        phoneInput.addEventListener('keyup', checkPhone);
+        function checkPhone() {
+            //Phone
+            const phoneValue = phoneInput.value;
+            const phoneValid = phoneValue.length == 9;
+            if (phoneValid) {
+                phoneInput.style.borderColor = "green"
+            } else {
+                phoneInput.style.borderColor = "red"
+            }
+        }
+        mailInput.addEventListener('keyup', checkEmail)
+        function checkEmail() {
+            // Email
+            const mailValue = mailInput.value;
+            const mailValid = mailValue.includes('@') && mailValue.includes('.');
+            if (mailValid) {
+                mailInput.style.borderColor = "green";
+            } else {
+                mailInput.style.borderColor = "red";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

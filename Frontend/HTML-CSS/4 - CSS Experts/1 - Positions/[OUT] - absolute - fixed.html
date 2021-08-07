@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            border: 1px solid black
+        }
+
+        #fixed {
+            /*fixed on the browser windows/viewport*/
+            position: fixed;
+            top: 0;
+            margin: 0;
+        }
+
+        #absolute {
+            /*Absolute move the element... but we need an addition informaiton*/
+            /* What's the ref? */
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+        }
+
+        #reference {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background-color: rgb(170, 235, 161);
+        }
+    </style>
+</head>
+
+<body>
+    <p>i'm paragraph</p>
+    <p>i'm paragraph</p>
+    <div id="reference">
+        <p id="absolute">absolute</p>
+    </div>
+    <p>i'm paragraph</p>
+    <p>i'm paragraph</p>
+    <p id="fixed">fixed</p>
+    <p>i'm paragraph</p>
+    <p>i'm paragraph</p>
+</body>
+
+</html>

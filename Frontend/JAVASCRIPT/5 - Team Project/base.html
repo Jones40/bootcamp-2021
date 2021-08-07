@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #playground {
+            width: 800px;
+            height: 800px;
+            margin: 50px auto;
+            border: 1px dashed black;
+            border-radius: 10px;
+            /*Because duck is using position absolute*/
+            position: relative;
+            overflow: hidden;
+        }
+
+        #duck {
+            background-color: green;
+            width: 10%;
+            height: 10%;
+            border-radius: 10px;
+            position: absolute;
+            /*What's the ref ?*/
+            top: 0;
+            left: 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        #restart {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 50px;
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.876);
+            z-index: 1;
+            /*Layer : Above the 0*/
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="restart">
+        <h1>RESTART</h1>
+        <h2>Keyboard : <span id="scoreK"></span></h2>
+        <h2>Mouse : <span id="scoreM"></span></h2>
+
+    </div>
+    <section id="playground">
+        <article id="duck">>o)<br>(_></article>
+    </section>
+
+    <script>
+        const duckEl = document.querySelector('#duck');
+        let score1 = 0;
+        let score2 = 0;
+
+        // When I click on the duck, the duck dies...
+        function hit() {
+            duckEl.style.backgroundColor = "red";
+            /*Clean the old JS/CSS*/
+            //duckEl.style.transitionDuration = "1s";
+            //duckEl.style.top = "100%";
+            //duckEl.style.left = "100%";
+            //duckEl.style.transform = "rotate(180deg)";
+            score2++;
+            gameOver();
+
+        }
+        duckEl.addEventListener('click', hit);
+
+        // When I press a key on the website, the duck moves
+        // The duck move to the bottom when I press the down arrow
+        document.addEventListener('keydown', move);
+        let positionTop = 0;
+        function move(event) {
+            // input/gather
+            console.log(event.key);
+            // logic
+            if (event.key == "ArrowDown") {
+                positionTop = positionTop + 10;
+            }
+            //limits
+            if (positionTop > 90) {
+                positionTop = 0;
+            }
+            // output
+            duckEl.style.top = positionTop + "%"; // CSS expect "10%" not "10"
+        }
+
+
+        // win condition for the duck
+        const espaceTime = 5 * 1000;
+        function duckEscaped() {
+            duckEl.style.backgroundColor = "blue";
+            score1++;
+            gameOver();
+        }
+        // Time event (will launch in... 15 secondes)
+        let timer = setTimeout(duckEscaped, espaceTime)
+
+        function gameOver() {
+            // remove TimeOut  ?
+            clearTimeout(timer);
+            // remove EL ?
+            duckEl.removeEventListener('click', hit);
+            document.removeEventListener('keydown', move);
+            document.querySelector('#restart').style.display = "block";
+
+            // Update the score board
+            document.querySelector('#scoreK').innerText = score1;
+            document.querySelector('#scoreM').innerText = score2;
+        }
+        document.querySelector('#restart').addEventListener('click', restart)
+        function restart() {
+            document.querySelector('#restart').style.display = "none";
+            duckEl.addEventListener('click', hit);
+            document.addEventListener('keydown', move);
+            // reset the colors/CSS of the duck
+            duckEl.style.top = 0;
+            duckEl.style.backgroundColor = "green";
+            positionTop = 0;
+
+            timer = setTimeout(duckEscaped, espaceTime)
+        }
+
+
+    </script>
+</body>
+
+</html>

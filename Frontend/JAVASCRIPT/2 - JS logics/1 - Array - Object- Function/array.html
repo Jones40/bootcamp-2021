@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array</title>
+</head>
+
+<body>
+
+    <script>
+        // Array - store multiple data
+        const fruits = ['banana', 'apple', 1, 2, true]
+        // array are 0-based
+        console.log(fruits[0]);
+        // the number in the list is called INDEX
+        // access data
+        console.table(fruits)
+        console.log(fruits)
+        // length of the array
+        console.log(fruits.length)
+        // first element
+        console.log(fruits[0]);
+        // last element
+        console.log(fruits[fruits.length - 1]);
+        // write in an array
+        fruits[0] = "kiwi";
+
+        // Multi dimensional Array
+        const drawers = [
+            ['phone charger', 'ear buds', 'broken S8'],
+            ['Game controller', '3DS'],
+            [['attendance', 'evaluations'], 'CVs'],
+            ['usb key', 'keyboard'],
+        ]
+        console.log(drawers[1][1]); // '3DS'
+        console.log(drawers[2][0][1]); // -> 'attendance'
+        console.table(drawers);
+
+        // MUST KNOWN FUNCTIONS/METHODS
+        const menu = ['salada', 'antipasti', 'piatti', 'desert'];
+        // ! FIND SOMETHING - indexOf
+        menu.indexOf('salada'); // -> 0
+        menu.indexOf('limoncello'); // -> -1
+        menu.includes('salada'); // -> true
+
+        // I store in a "box" labelled 'piattiIndex' (camelCase)
+        // the index (number) of the 'piatti' string in the "menu" array
+        // in this case, the value of this variable is : 2(number)
+        const piattiIndex = menu.indexOf('piatti'); // 2
+        // Modify an array SPLICE
+        menu.splice(2, 1, 'primi piatti', 'secondi piatti');
+        console.log(menu);
+        // Exercice : how to delete the first element ?
+        menu.splice(0, 1);
+        //Exercice inject a "soupa" at the begining of the menu
+        menu.splice(0, 0, 'soupa');
+
+        // insert "limoncello" before desert
+        const desertIndex = menu.indexOf('desert');
+        menu.splice(desertIndex, 0, 'limoncello');
+
+        // STRING ARE KIND OF LIKE ARRAYS
+        const chat = "Igor";
+        console.log(chat[0]);
+        console.log(chat.length);
+        console.log(chat.indexOf('go'));
+
+        // USEFULL
+        // push() ->add at the end
+        // unshift() -> add at the beginininnng
+        // pop() -> remove last element
+        // shift() -> remove the first element
+        // concat() -> merge two arrays
+        // flat() -> flatten a multi dimensional array
+        const colors = ['red', 'orange']
+        const rainbow = ['yellow', ' blue', ...colors]
+
+
+        // Switch array <-> string 
+        // usefull to Replace characters
+        // split()
+        const sentense = 'I am Igor';
+        const sentArray = sentense.split(' ');
+        //join()
+        const withoutSpaces = sentArray.join('_')
+
+        /// Advance JS Array function
+        // If curious : map, reduce, filter, sort
+      // https://www.freecodecamp.org/news/javascript-map-reduce-and-filter-explained-with-examples/
+      //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort
+    </script>
+</body>
+
+</html>

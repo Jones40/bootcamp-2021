@@ -1,0 +1,86 @@
+/********************
+*** CSS SELECTORS ***
+********************/
+
+/* Tag - (name of the element)
+Applied to every <h2> */
+
+h2{
+    color: blue;
+}
+
+/*.class - you can use BEM convention */
+.ambroise{
+    color:salmon;
+}
+.centered{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*[attribut="value"] */
+[type="email"]{
+    border: 5px dashed peru;
+}
+[type="radio"]{
+    transform: scale(3);
+}
+[href='#']{
+    color: olivedrab;
+}
+
+/* #id : unique in the page ! (duplicate id is bad)  */
+#gallery{
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+#card-list{
+    background-color: lightgray;
+}
+
+/*conficts id > class + attribut > tag*/
+/* id same priority last one wins*/
+#mother{
+    color:blue;
+}
+h6{
+    color: pink;
+}
+[name="timmy"]{
+    color:orange
+}
+.son-of-a{
+    color:red;
+}
+
+/* Addition important selectors */
+/*nothing : combines the selectors to gain more points*/
+h6.ambroise#mother{
+    color: aliceblue;
+}
+/* space - dig inside */
+#gallery img{
+    width: 200px;
+}
+
+p span{
+    color: red;
+}
+
+/*,  comma*/
+
+article h1, article h2, article h3{
+    font-family: monospace;
+}
+
+/*BONUS SELECTORS*/
+/*direct children*/
+div>span{
+
+}
+/*+ right after*/
+article+span{
+
+}
+

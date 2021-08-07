@@ -1,0 +1,16 @@
+nav {
+  border-top: 1px solid #000;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+}
+
+nav ul a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=simpler.css.map */

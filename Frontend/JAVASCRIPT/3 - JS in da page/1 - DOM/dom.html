@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Object Model</title>
+    <style>
+        .centered {
+            text-align: center;
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM</h1>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+
+    <input type="email" id="usermail" value="igor.marty@live.fr">
+    <input type="checkbox" name="ack" id="acknoledgment" checked>
+    <button type="submit">Send</button>
+
+    <script>
+        // DOM - Document Object Model - The all web page
+        document.write('Hello');
+
+        // [SELECT] 
+        // [SELECT ONE]
+        // uses CSS selector
+        // -> https://flukeout.github.io/
+        const myHeading = document.querySelector('h1');
+
+        // [SELECT Multiple] -> Array[]
+        const allPara = document.querySelectorAll('p');
+        const allSelectors = document.querySelectorAll('main section.card>h2');
+        const firstP = document.querySelectorAll('p')[0];
+
+        // Old writing 
+        const oldId = document.getElementById('logo');
+        const oldClass = document.getElementsByClassName('card');
+        const oldTag = document.getElementsByTagName('p');
+
+        // [READ] 
+        const mailId = document.querySelector('#usermail').id;
+        const mailElement = document.querySelector('#usermail');
+        const shortId = mailElement.id;
+        const shortType = mailElement.type;
+        const shortName = mailElement.name;
+        const shortValue = mailElement.value; // -> "Extermelly" userfull, "evaluation important you need to learn it" usefull
+        const longValue = document.querySelector('input').value;
+        const longChecked = document.querySelector('[type="checkbox"]').checked;
+
+        // CSS CLASS -> Classname,  classList
+        document.querySelector('h1').classList.add('centered');
+        document.querySelector('h1').classList.remove('centered');
+        document.querySelector('h1').classList.toggle('centered');
+        const isCentered = document
+            .querySelector('h1')
+            .classList.contains('centered');
+
+
+        // [MODIFY]
+        document.querySelector('input').value = "el_humbre@caliente.es"
+        document.querySelector('input').id = "myInput"
+        document.querySelector('input').type = "password"
+        document.querySelector('#acknoledgment').checked = false
+        document.querySelector('button').disabled = true;
+
+        // DOES NOT WORK
+        let elementValue = document.querySelector('input').value;
+        elementValue = "Not working";
+
+        // working
+        let element = document.querySelector('input');
+        element.value = "Working";
+        // works aswell
+        document.querySelector('input').value = "Working";
+
+
+        // MODIFY TEXT/STYLE
+        document.querySelector('h1').textContent = 'Hi<em>ch</em>am';
+        document.querySelector('h1').innerText = 'Hi<em>ch</em>am';
+        document.querySelector('h1').innerHTML = 'Hi<em>ch</em>am';
+
+        document.querySelector('h1').style.textAlign = "right";
+        document.querySelector('h1').style.color = "blue";
+
+    </script>
+</body>
+
+</html>
