@@ -1,0 +1,40 @@
+-- Explanation :
+
+Now, there is a 'series' table that has the same fields as the 'movies' table.
+Here is the details of tables :
+
+	Directors
+	------
+	director_id, name, date_of_birth, bio
+
+	Movies
+	------
+	movie_id, title, year_released, views, #director_id
+
+	Series
+	------
+	serie_id, title, year_released, views, #director_id
+
+
+-- Queries :
+	- Recover all series and all movies in one query.
+
+		SELECT title, year_released, views
+		FROM series
+		UNION
+		SELECT title, year_released, views
+		FROM movies
+
+	- Collect all series and all movies from 2018
+
+	- Collect all the series and all the films with the director.
+
+		SELECT title, year_released, views, director_id
+		FROM series
+		UNION
+		SELECT title, year_released, views, director_id
+		FROM movies
+
+	- Get the number of views per director (movies and series combined).
+
+	- Get the total view number for all movies AND all series (movies and separate series).
